@@ -1,0 +1,10 @@
+' https://graphviz.org/download/
+' https://github.com/plantuml-stdlib/C4-PlantUML
+' cntl shift p -> Preview Current Diagram
+' Tem q ter java na maq
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+System(Id, "Titulo", "System desc")
+
+@enduml
