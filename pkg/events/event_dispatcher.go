@@ -24,6 +24,7 @@ func (ev *EventDispatcher) Dispatch(event EventInterface) error {
 			wg.Add(1)
 			go handler.Handle(event, wg)
 		}
+		wg.Wait()
 	}
 	return nil
 }
