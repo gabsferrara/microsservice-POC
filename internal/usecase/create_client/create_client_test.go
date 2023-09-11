@@ -1,4 +1,4 @@
-package createclient
+package create_client
 
 import (
 	"testing"
@@ -16,6 +16,7 @@ func (m *ClientGatewayMock) Save(client *entity.Client) error {
 	args := m.Called(client)
 	return args.Error(0)
 }
+
 func (m *ClientGatewayMock) Get(id string) (*entity.Client, error) {
 	args := m.Called(id)
 	return args.Get(0).(*entity.Client), args.Error(1)
@@ -37,5 +38,4 @@ func TestCreateClientUseCase_Execute(t *testing.T) {
 	assert.Equal(t, "j@j", output.Email)
 	m.AssertExpectations(t)
 	m.AssertNumberOfCalls(t, "Save", 1)
-
 }
